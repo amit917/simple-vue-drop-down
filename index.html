@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML 5 Boilerplate</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <div id = "app">
+      <select v-model="country" @change="changed">
+        <option value="">Please select a country</option>
+      <option value="UK">United Kingdom</option>
+      <option value="IN">India</option>
+      <option value="US">United States</option>
+
+      </select> 
+      {{country}}
+    </div>
+<script>
+    let app= new Vue({
+        el:'#app',
+        data:{
+            country:''
+        },
+        methods:{
+            changed(){
+               // alert("z");
+                console.log(this.country);
+            }
+        }
+    })
+    </script>
+  </body>
+</html>
