@@ -10,7 +10,7 @@
   <body>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <div id = "app">
-        <form action=""></form>
+        <form action="">
       <select v-model="country" @change="changed" v-if="countries.length">
         <option value="">Please select a country</option>
       <option v-bind:value="country.code" v-for="country in countries">{{country.name}}</option>
