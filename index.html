@@ -10,27 +10,37 @@
   <body>
 	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
     <div id = "app">
-      <select v-model="country" @change="changed">
+        <form action=""></form>
+      <select v-model="country" @change="changed" v-if="countries.length">
         <option value="">Please select a country</option>
-      <option value="UK">United Kingdom</option>
-      <option value="IN">India</option>
-      <option value="US">United States</option>
+      <option v-bind:value="country.code" v-for="country in countries">{{country.name}}</option>
 
       </select> 
+    <button>Submit</button>
+    </forn>
       {{country}}
     </div>
 <script>
     let app= new Vue({
         el:'#app',
         data:{
-            country:''
+            country:'',
+            countries:[]
         },
         methods:{
-            changed(){
-               // alert("z");
-                console.log(this.country);
-            }
+            
+        },
+        mounted(){
+            setTimeout(()=>{
+            this.countries = [
+                {code:'UK',name:'United Kingdoms'},
+                {code:'IN',name:'India'},
+                {code:'US',name:'United States'}
+            ]
+
+            },1000)
         }
+        
     })
     </script>
   </body>
